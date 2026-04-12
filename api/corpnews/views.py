@@ -6,5 +6,3 @@ from .serializers import NoticiaSerializer
 class NoticiaViewSet(viewsets.ModelViewSet):
   queryset = Noticia.objects.all()
   serializer_class = NoticiaSerializer
-
-# Create your views here.
