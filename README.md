@@ -59,15 +59,14 @@ Como usuário do sistema, quero visualizar um feed com as últimas notícias pos
 - Consumir a API via Axios (Necessário criar um arquivo de service).
 - Exibir mensagens de erro em caso de falha e um estado de carregamento (*loading*) durante a busca.
 
-### HU02 - Publicar Nova Notícia
-Como usuário do sistema, quero um formulário para publicar uma nova notícia no mural, para que meus colegas possam visualizá-la.
+### HU02 - Cadastrar e Excluir Notícias
+Como usuário do sistema, quero poder cadastrar novas notícias e remover publicações antigas ou incorretas do mural.
 
 **Critérios de Aceite:**
-- A interface deve ter um botão para cadastrar uma "Nova Notícia" (pode abrir um modal ou redirecionar de página).
-- O formulário deve conter os seguintes campos obrigatórios: Título, Resumo, Conteúdo, Imagem da capa, Autor, Foto do autor e Categoria (Select).
-- O sistema deve validar se todos os campos obrigatórios estão preenchidos antes de permitir o envio.
-- Realizar um `POST` para a API via Axios para salvar a postagem.
-- Após o sucesso, limpar o formulário e atualizar o feed de notícias automaticamente.
+- **Cadastrar:** A interface deve ter um botão para cadastrar uma "Nova Notícia" (modal ou redirecionamento de página). O formulário deve conter os seguintes campos obrigatórios: Título, Resumo, Conteúdo, Imagem da capa, Autor, Foto do autor e Categoria (Select). Realizar um `POST` para a API via Axios.
+- **Excluir:** As notícias devem possuir uma opção de exclusão visualmente clara (ex: ícone de lixeira). O sistema deve solicitar uma confirmação do usuário (ex: modal ou *alert*) antes de apagar definitivamente o registro para evitar exclusões acidentais. Realizar um `DELETE` para a API via Axios.
+- **Validação:** O sistema deve validar se todos os campos obrigatórios estão preenchidos antes de permitir o envio do formulário de cadastro.
+- Após o sucesso de qualquer uma dessas operações (cadastro ou exclusão), o feed de notícias deve ser atualizado automaticamente na tela.
 
 ### HU03 - Detalhamento da Notícia
 Como usuário do sistema, quero acessar uma página de detalhe para visualizar uma notícia específica por completo.
