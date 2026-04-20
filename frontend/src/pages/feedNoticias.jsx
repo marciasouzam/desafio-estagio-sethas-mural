@@ -1,21 +1,61 @@
 // HU01 - Feed de Notícias
 
-import CardFeatured from '../components/news/CardFeatured';
+import { useState, useEffect } from 'react';
+import CardDestaque from '../components/news/CardDestaque';
+import CardPequeno from '../components/news/CardPequeno';
 
-const noticiaFake = { //TEMPORARIO TEMPORARIO TEMPORARIO 
-  titulo: 'Teste',
-  resumo: 'teste',
-  imagem_capa: 'https://placehold.co/304x225',
-  autor: 'Marcia',
-  foto_autor: 'https://placehold.co/32x32',
-  data_publicacao: '09/04/2026',
-  categoria: 'Aviso',
-}
+import { getNoticias } from '../services/noticiasService';
+
 
 export default function FeedNoticias() {
+  const [carregando, setCarregando] = useState(true); // carregamento inicial
+  const [erro, setErro] = useState(false); //erro ao carregar
+    const [noticias, setNoticias] = useState([]); // nenhuma notícia; noticias = [] (array vazio)
+
+  useEffect(() => {
+    getNoticias()
+      .then((res) => setNoticias(res.data))
+      .catch(() => setErro(true))
+      .finally(() => setCarregando(false));
+  }, []);
+
+  if (carregando) {
+    return (
+      <main className="max-w-[1030px] mx-auto px-4 py-8">
+        <p className="text-[var(--cor-texto-descricao)]">Carregando notícias</p>
+      </main>
+    );
+  }
+
+  if (erro) {
+    return (
+      <main className="max-w-[1030px] mx-auto px-4 py-8">
+        <p className="text-[var(--cor-texto-descricao)]">Erro ao carregar notícias. </p>
+      </main>
+    );
+  }
+
+  if (noticias.length === 0) {
+    return (
+      <main className="max-w-[1030px] mx-auto px-4 py-8">
+        <p className="text-[var(--cor-texto-descricao)]">Nenhuma notícia encontrada.</p>
+      </main>
+    );
+  }
+
+  const [destaque, ...restantes] = noticias;
+
   return (
     <main className="max-w-[1030px] mx-auto px-4 py-8">
-      <CardFeatured noticia={noticiaFake} />
+      <CardDestaque noticia={destaque} />
+
+      {restantes.length > 0 && (
+        <div className="grid grid-cols-3 gap-6 mt-6">
+          {restantes.map((noticia) => (
+            <CardPequeno key={noticia.id} noticia={noticia} />
+          ))}
+        </div>
+      )}
     </main>
   );
 }

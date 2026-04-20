@@ -1,5 +1,5 @@
 // Card destaque (maior) — HU01
-export default function CardFeatured({ noticia }) {
+export default function CardDestaque({ noticia }) {
   return (
     <div className="w-full flex flex-row gap-6 bg-[var(--cor-surface)] border border-[var(--borda)] rounded-xl p-[9px_24px_9px_9px] h-[243px]">
 
