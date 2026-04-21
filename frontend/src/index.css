@@ -48,21 +48,23 @@
   src: url('./assets/fonts/dm-mono-v14-latin-300.woff2') format('woff2');
 }
 
-:root {
-  --cor-texto-titulo: #393939;
-  --cor-texto-base: #313131;
-  --cor-texto-descricao: #656565;
-  --cor-pagina-bg: #f3f4f5;
-  --cor-enfase: #80e67c;
-  --cor-surface: #ffffff;
+@theme {
+  /* Cores */
+  --color-texto-titulo: #393939;
+  --color-texto-base: #313131;
+  --color-texto-descricao: #656565;
+  --color-pagina-bg: #f3f4f5;
+  --color-enfase: #80e67c;
+  --color-surface: #ffffff;
   --borda: #e6e6e6;
   
   /* Fontes */
-  --fonte-titulo-principal: 'DM Serif Text', serif;
-  --fonte-resumo-home: 'DM Sans', sans-serif;
-  --fonte-resumo-noticia: 'DM Sans', sans-serif;
-  --fonte-texto-corpo: 'DM Sans', sans-serif; /*preciso baixar? */
-  --fonte-mono: 'DM Mono', monospace;
+  --font-titulo-noticia: 'DM Serif Text', serif;
+  --font-titulo-noticia-home: 'DM Sans', sans-serif;
+  --font-resumo-home: 'DM Sans', sans-serif;
+  --font-resumo-noticia: 'DM Sans', sans-serif;
+  --font-texto-corpo: 'DM Sans', sans-serif; 
+  --font-mono: 'DM Mono', monospace;
 
   /* Pesos */
   --weight-titulo-noticia: 400; 
