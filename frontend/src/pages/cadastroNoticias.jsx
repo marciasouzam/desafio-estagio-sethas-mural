@@ -20,7 +20,7 @@ const schema = z.object({
 });
 
 const inputClass =
-  'w-full border border-[var(--color-borda)] rounded-lg px-3 py-2 text-sm text-[var(--color-fonte-noticia)] placeholder:text-[var(--color-resumo-noticia)] bg-white focus:outline-none focus:ring-1 focus:ring-[var(--color-enfase)]';
+  'w-full border border-[var(--color-divisor)] rounded-lg px-3 py-2 text-sm text-[var(--color-base)] placeholder:text-[var(--color-apoio)] bg-white focus:outline-none focus:ring-1 focus:ring-[var(--color-enfase)]';
 
 export default function CadastroNoticias() {
   const navigate = useNavigate();
@@ -65,18 +65,18 @@ export default function CadastroNoticias() {
 
       <Link
         to="/"
-        className="flex items-center gap-1.5 text-sm text-[var(--color-resumo-noticia)] hover:text-[var(--color-fonte-noticia)] mb-6 w-fit transition-colors"
+        className="flex items-center gap-1.5 text-sm text-[var(--color-apoio)] hover:text-[var(--color-base)] mb-6 w-fit transition-colors"
       >
         ← Voltar ao feed
       </Link>
 
-      <h1 className="text-2xl font-semibold text-[var(--color-fonte-home)] mb-6">
+      <h1 className="text-2xl font-semibold text-[var(--color-principal)] mb-6">
         Cadastrar uma nova Notícia
       </h1>
 
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-[var(--color-surface)] border border-[var(--color-borda)] rounded-xl p-6 flex flex-col gap-4"
+        className="bg-[var(--color-superficie)] border border-[var(--color-divisor)] rounded-xl p-6 flex flex-col gap-4"
       >
         <FormField htmlFor="titulo" label="Título da Notícia" error={errors.titulo?.message}>
           <input
@@ -131,12 +131,12 @@ export default function CadastroNoticias() {
               htmlFor="foto_autor"
               className={`${inputClass} flex items-center gap-2 cursor-pointer`}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-resumo-noticia)] shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-apoio)] shrink-0">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
                 <polyline points="17 8 12 3 7 8" />
                 <line x1="12" y1="3" x2="12" y2="15" />
               </svg>
-              <span className="text-[var(--color-resumo-noticia)] text-sm truncate">
+              <span className="text-[var(--color-apoio)] text-sm truncate">
                 {fotoAutorSelecionada?.[0]?.name ?? 'Procurar Arquivo'}
               </span>
             </label>
@@ -147,16 +147,16 @@ export default function CadastroNoticias() {
         <FormField error={errors.imagem_capa?.message}>
           <label
             htmlFor="imagem_capa"
-            className="flex flex-col items-center justify-center gap-2 border border-dashed border-[var(--color-borda)] rounded-xl py-6 cursor-pointer hover:bg-gray-50 transition-colors"
+            className="flex flex-col items-center justify-center gap-2 border border-dashed border-[var(--color-divisor)] rounded-xl py-6 cursor-pointer hover:bg-gray-50 transition-colors"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-resumo-noticia)]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-[var(--color-apoio)]">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
               <polyline points="17 8 12 3 7 8" />
               <line x1="12" y1="3" x2="12" y2="15" />
             </svg>
-            <p className="text-sm text-[var(--color-resumo-noticia)]">
+            <p className="text-sm text-[var(--color-apoio)]">
               {imagemCapaSelecionada?.[0]?.name
-                ? <span className="text-[var(--color-fonte-noticia)] font-medium">{imagemCapaSelecionada[0].name}</span>
+                ? <span className="text-[var(--color-base)] font-medium">{imagemCapaSelecionada[0].name}</span>
                 : <><span className="text-[var(--color-enfase)] font-medium">Clique para fazer o upload</span> da capa da sua notícia</>
               }
             </p>
@@ -172,7 +172,7 @@ export default function CadastroNoticias() {
           <button
             type="submit"
             disabled={enviando}
-            className="bg-[var(--color-enfase)] text-[var(--color-fonte-noticia)] font-semibold text-sm px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+            className="bg-[var(--color-enfase)] text-[var(--color-base)] font-semibold text-sm px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
           >
             {enviando ? 'Cadastrando...' : 'Cadastrar notícia'}
           </button>

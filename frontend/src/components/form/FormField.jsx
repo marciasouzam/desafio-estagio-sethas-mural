@@ -2,7 +2,7 @@ export default function FormField({ label, htmlFor, error, children }) {
   return (
     <div className="flex flex-col gap-1">
       {label && (
-        <label htmlFor={htmlFor} className="text-sm text-[var(--color-fonte-noticia)]">
+        <label htmlFor={htmlFor} className="text-sm text-[var(--color-base)]">
           {label}
         </label>
       )}

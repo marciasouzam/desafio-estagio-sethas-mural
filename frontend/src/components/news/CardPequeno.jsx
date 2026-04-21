@@ -7,11 +7,11 @@ export default function CardPequeno({ noticia }) {
   return (
     <div
       onClick={() => navigate(`/noticias/${noticia.id}`)}
-      className="w-[326px] h-[243px] flex flex-col justify-between bg-[var(--color-surface)] border border-[var(--color-borda)] rounded-xl p-4 cursor-pointer"
+      className="w-[326px] h-[243px] flex flex-col justify-between bg-[var(--color-superficie)] border border-[var(--color-divisor)] rounded-xl p-4 cursor-pointer"
     >
       <div className="flex flex-col gap-3">
         <CategoryBadge categoria={noticia.categoria} />
-        <h3 className="text-[var(--color-fonte-home)] font-semibold text-base leading-snug line-clamp-3">
+        <h3 className="text-principal font-sans font-destaque text-base leading-snug line-clamp-3">
           {noticia.titulo}
         </h3>
       </div>
@@ -25,9 +25,9 @@ export default function CardPequeno({ noticia }) {
               className="w-8 h-8 rounded-full object-cover"
             />
           )}
-          <span className="text-sm text-[var(--color-fonte-noticia)]">{noticia.autor}</span>
+          <span className="text-sm text-[var(--color-base)]">{noticia.autor}</span>
         </div>
-        <span className="text-sm text-[var(--color-resumo-noticia)]">{noticia.data_publicacao}</span>
+        <span className="text-sm text-[var(--color-apoio)]">{noticia.data_publicacao}</span>
       </div>
     </div>
   );

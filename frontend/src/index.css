@@ -11,7 +11,6 @@
 
 /* Linha fina da notícia - Na página do feed de notícias: font-weight: 500*/
 /* Texto corrido na página da notícia - font-weight: 500*/
-
 @font-face {
   font-family: 'DM Sans';
   font-style: normal;
@@ -21,7 +20,6 @@
 }
 
 /* Linha fina da notícia - Na página da notícia: font-weight: 400*/
-
 @font-face {
   font-family: 'DM Sans';
   font-style: normal;
@@ -49,38 +47,29 @@
 }
 
 @theme {
-  /* Cores */
-  --color-fonte-home: #393939;
-  --color-fonte-noticia: #313131;
-  --color-resumo-noticia: #656565;
-  --color-bg: #f3f4f5;
-  --color-enfase: #80e67c;
-  --color-surface: #ffffff;
-  --color-borda: #e6e6e6;
-  
-  /* Fontes */
-  --font-titulo-noticia: 'DM Serif Text', serif;
-  --font-titulo-noticia-home: 'DM Sans', sans-serif;
-  --font-resumo-home: 'DM Sans', sans-serif;
-  --font-resumo-noticia: 'DM Sans', sans-serif;
-  --font-texto-corpo: 'DM Sans', sans-serif; 
+  --color-principal: #393939;  /* antigo fonte-home  */
+  --color-base: #313131;       /* antigo fonte-noticia  */
+  --color-apoio: #656565;      /* antigo resumo-noticia */
+  --color-fundo: #f3f4f5;      /* antigo bg (Fundo geral da página) */
+  --color-superficie: #ffffff; /* antigo fundo de componentes  */
+  --color-divisor: #e6e6e6;    /* antigo borda  */
+  --color-enfase: #80e67c;     /* Cor de destaque/marca */
+
+  --font-serif: 'DM Serif Text', serif; 
+  --font-sans: 'DM Sans', sans-serif;    
   --font-mono: 'DM Mono', monospace;
 
-  /* Pesos */
-  --font-weight-titulo-noticia: 400; 
-  --font-weight-titulo-noticia-home: 600; 
-  --font-weight-resumo-home: 400;      
-  --font-weight-resumo-noticia: 500;   
-  --font-weight-corpo-noticia: 500;            
-  --font-weight-mono: 300;             
+  --font-weight-leve: 300;     
+  --font-weight-regular: 400;  
+  --font-weight-medio: 500;    
+  --font-weight-destaque: 600; 
 }
-
 
 body {
   margin: 0;
-  background: var(--color-bg);
-  color: var(--color-fonte-noticia);
-  font-family: var(--font-texto-corpo);
+  background: var(--color-fundo); 
+  color: var(--color-base);       
+  font-family: var(--font-sans);  
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

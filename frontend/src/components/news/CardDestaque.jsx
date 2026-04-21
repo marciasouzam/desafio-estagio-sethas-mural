@@ -1,6 +1,6 @@
 export default function CardDestaque({ noticia }) {
   return (
-    <div className="w-full flex flex-row gap-6 bg-[var(--color-surface)] border border-[var(--color-borda)] rounded-xl p-[9px_24px_9px_9px] h-[243px]">
+    <div className="w-full flex flex-row gap-6 bg-[var(--color-superficie)] border border-[var(--color-divisor)] rounded-xl p-[9px_24px_9px_9px] h-[243px]">
       <img
         src={noticia.imagem_capa}
         alt={noticia.titulo}
@@ -9,10 +9,10 @@ export default function CardDestaque({ noticia }) {
 
       <div className="flex flex-col justify-between flex-1 py-1">
         <div className="flex flex-col gap-2">
-          <h2 className="text-[var(--color-fonte-home)] font-semibold text-xl leading-snug">
+          <h2 className="text-[var(--color-principal)] font-semibold text-xl leading-snug">
             {noticia.titulo}
           </h2>
-          <p className="text-[var(--color-resumo-noticia)] text-sm leading-relaxed line-clamp-3">
+          <p className="text-[var(--color-apoio)] text-sm leading-relaxed line-clamp-3">
             {noticia.resumo}
           </p>
         </div>
@@ -24,9 +24,9 @@ export default function CardDestaque({ noticia }) {
               alt={noticia.autor}
               className="w-8 h-8 rounded-full object-cover"
             />
-            <span className="text-sm text-[var(--color-fonte-noticia)]">{noticia.autor}</span>
+            <span className="text-sm text-[var(--color-base)]">{noticia.autor}</span>
           </div>
-          <span className="text-sm text-[var(--color-resumo-noticia)]">
+          <span className="text-sm text-[var(--color-apoio)]">
             {noticia.data_publicacao}
           </span>
         </div>
