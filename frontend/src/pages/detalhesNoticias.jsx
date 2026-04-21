@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import vectorIcon from '../assets/vector.svg';
+import NomeAutor from '../components/news/NomeAutor';
 import { deletarNoticia, getNoticia } from '../services/noticiasService';
 import { formatarData } from '../utils/formatarData';
 
@@ -101,9 +102,10 @@ export default function DetalhesNoticias() {
                 />
               )}
             </div>
-            <span className="min-w-0 truncate text-xl leading-textos text-principal font-sans font-destaque">
-              {noticia.autor}
-            </span>
+            <NomeAutor
+              nome={noticia.autor}
+              className="min-w-0 truncate text-xl leading-textos text-principal font-sans font-destaque"
+            />
           </div>
 
           <button

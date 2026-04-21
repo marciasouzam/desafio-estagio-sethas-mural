@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import CadastrarNoticiaButton from '../components/CadastrarNoticiaButton';
 import Saudacao from '../components/Saudacao';
 import CardDestaque from '../components/news/CardDestaque';
 import CardPequeno from '../components/news/CardPequeno';
@@ -33,12 +34,7 @@ export default function FeedNoticias() {
         <Saudacao />
         <h1 className="text-[32px] leading-textos text-principal font-serif font-regular">Mural de Notícias</h1>
       </div>
-      <Link
-        to="/cadastro"
-        className="rounded-md bg-enfase px-3 py-[7.5px] text-base leading-textos text-principal font-sans font-destaque cursor-pointer transition-opacity hover:opacity-90"
-      >
-        Cadastrar Notícia
-      </Link>
+      <CadastrarNoticiaButton />
     </section>
   );
 

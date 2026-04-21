@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import NomeAutor from './NomeAutor';
 import { formatarData } from '../../utils/formatarData';
 
 export default function CardDestaque({ noticia }) {
@@ -35,9 +36,10 @@ export default function CardDestaque({ noticia }) {
                   />
                 )}
               </div>
-              <span className="min-w-0 truncate text-sm leading-textos text-principal font-sans font-destaque">
-                {noticia.autor}
-              </span>
+              <NomeAutor
+                nome={noticia.autor}
+                className="min-w-0 truncate text-sm leading-textos text-principal font-sans font-destaque"
+              />
             </div>
             <time className="shrink-0 text-sm leading-textos text-principal font-sans font-destaque">
               {formatarData(noticia.data_publicacao)}
