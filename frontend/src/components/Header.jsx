@@ -20,11 +20,11 @@ export default function Header() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="flex flex-col leading-tight">
-            <span className="text-[14px] font-semibold text-principal truncate">
+          <div className="flex flex-col leading-textos">
+            <span className="truncate text-sm leading-textos text-principal font-sans font-destaque">
               Danilo
             </span>
-            <span className="text-[14px] font-semibold text-principal truncate">
+            <span className="truncate text-sm leading-textos text-principal font-sans font-destaque">
               Ladeira
             </span>
           </div>

@@ -6,7 +6,7 @@ export default function CardDestaque({ noticia }) {
     <article className="w-full h-[243px] overflow-hidden rounded-xl border border-divisor bg-superficie">
       <Link
         to={`/noticias/${noticia.id}`}
-        className="flex h-full gap-4 p-2 text-left transition-shadow hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-enfase focus-visible:ring-offset-2"
+        className="flex h-full gap-6 p-2 text-left transition-shadow hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-enfase focus-visible:ring-offset-2"
       >
         <img
           src={noticia.imagem_capa}
@@ -14,17 +14,17 @@ export default function CardDestaque({ noticia }) {
           className="h-full w-[304px] shrink-0 rounded-lg object-cover"
         />
 
-        <div className="flex min-w-0 flex-1 flex-col px-2 py-3">
+        <div className="flex min-w-0 flex-1 flex-col pr-4 py-[14px]">
           <div className="flex flex-col gap-2">
-            <h2 className="line-clamp-2 text-[2rem] leading-[1.15] text-principal font-serif font-regular">
+            <h2 className="line-clamp-2 text-2xl leading-textos text-principal font-sans font-destaque">
               {noticia.titulo}
             </h2>
-            <p className="line-clamp-3 text-sm leading-[1.35] text-apoio font-sans font-regular">
+            <p className="line-clamp-3 text-base leading-textos text-principal font-sans font-regular">
               {noticia.resumo}
             </p>
           </div>
 
-          <footer className="mt-auto flex items-center justify-between gap-4 pt-6">
+          <footer className="mt-auto flex items-center justify-between gap-5 pt-6">
             <div className="flex min-w-0 items-center gap-2">
               <div className="size-8 shrink-0 overflow-hidden rounded-full border border-divisor bg-fundo">
                 {noticia.foto_autor && (
@@ -35,11 +35,11 @@ export default function CardDestaque({ noticia }) {
                   />
                 )}
               </div>
-              <span className="min-w-0 truncate text-xs leading-none text-principal font-sans font-destaque">
+              <span className="min-w-0 truncate text-sm leading-textos text-principal font-sans font-destaque">
                 {noticia.autor}
               </span>
             </div>
-            <time className="shrink-0 text-xs leading-none text-principal font-sans font-destaque">
+            <time className="shrink-0 text-sm leading-textos text-principal font-sans font-destaque">
               {formatarData(noticia.data_publicacao)}
             </time>
           </footer>
