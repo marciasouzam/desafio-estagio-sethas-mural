@@ -7,7 +7,7 @@ export default function CardPequeno({ noticia }) {
   return (
     <div
       onClick={() => navigate(`/noticias/${noticia.id}`)}
-      className="w-[326px] h-[243px] flex flex-col justify-between bg-[var(--cor-surface)] border border-[var(--borda)] rounded-xl p-4 cursor-pointer hover:shadow-md transition-shadow"
+      className="w-[326px] h-[243px] flex flex-col justify-between bg-[var(--cor-surface)] border border-[var(--borda)] rounded-xl p-4 cursor-pointer"
     >
       {/* Topo: badge + título */}
       <div className="flex flex-col gap-3">

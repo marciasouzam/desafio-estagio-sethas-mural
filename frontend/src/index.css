@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-/* Títulos principais*/
+/* Títulos principais e texto principal*/
 @font-face {
   font-family: 'DM Serif Text';
   font-style: normal;
@@ -9,16 +9,27 @@
   src: url('./assets/fonts/dm-serif-text-v15-latin-regular.woff2') format('woff2');
 }
 
-/* Títulos secundários - medium */
+/* Linha fina da notícia - Na página do feed de notícias: font-weight: 500*/
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./assets/fonts/dm-sans-v15-latin-500.woff2') format('woff2');
+}
+
+/* Linha fina da notícia - Na página da notícia: font-weight: 400*/
+
 @font-face {
   font-family: 'DM Sans';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('./assets/fonts/dm-sans-v15-latin-regular.woff2') format('woff2');
+  src: url('./assets/fonts/dm-sans-v15-latin-400.woff2') format('woff2');
 }
 
-/* Títulos secundários - semi-bold */
+/* Títulos das notícias - semi-bold */
 @font-face {
   font-family: 'DM Sans';
   font-style: normal;
@@ -44,11 +55,25 @@
   --cor-enfase: #80e67c;
   --cor-surface: #ffffff;
   --borda: #e6e6e6;
+  
+  /* Fontes */
   --fonte-titulo-principal: 'DM Serif Text', serif;
-  --fonte-titulo-secundario: 'DM Sans', sans-serif;
-  --fonte-texto-corpo: 'DM Sans', sans-serif;
+  --fonte-resumo-home: 'DM Sans', sans-serif;
+  --fonte-resumo-noticia: 'DM Sans', sans-serif;
+  --fonte-texto-corpo: 'DM Serif Text', serif;
   --fonte-mono: 'DM Mono', monospace;
+
+  /* Pesos */
+  --weight-titulo-principal: 400; 
+  
+  --weight-resumo-home: 500;      /* DM Sans Medium */
+  --weight-resumo-noticia: 400;   /* DM Sans Regular */
+  --weight-titulo-noticia: 600;   /* DM Sans Semi-Bold */
+  
+  --weight-corpo: 400;            /* DM Serif Regular */
+  --weight-mono: 300;             /* DM Mono Light */
 }
+
 
 body {
   margin: 0;
