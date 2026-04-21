@@ -30,7 +30,7 @@ export default function FeedNoticias() {
 
   const cabecalhoHome = (
     <section className="mb-6 flex items-center justify-between gap-4">
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-[31px]">
         <Saudacao />
         <h1 className="text-[32px] leading-textos text-principal font-serif font-regular">Mural de Notícias</h1>
       </div>
