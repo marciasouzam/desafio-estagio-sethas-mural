@@ -1,5 +1,3 @@
-// HU01 - Feed de Notícias
-
 import { useState, useEffect } from 'react';
 import CardDestaque from '../components/news/CardDestaque';
 import CardPequeno from '../components/news/CardPequeno';
@@ -8,9 +6,9 @@ import { getNoticias } from '../services/noticiasService';
 
 
 export default function FeedNoticias() {
-  const [carregando, setCarregando] = useState(true); // carregamento inicial
-  const [erro, setErro] = useState(false); //erro ao carregar
-    const [noticias, setNoticias] = useState([]); // nenhuma notícia; noticias = [] (array vazio)
+  const [carregando, setCarregando] = useState(true);
+  const [erro, setErro] = useState(false);
+    const [noticias, setNoticias] = useState([]);
 
   useEffect(() => {
     getNoticias()
@@ -22,7 +20,7 @@ export default function FeedNoticias() {
   if (carregando) {
     return (
       <main className="max-w-[1030px] mx-auto px-4 py-8">
-        <p className="text-[var(--cor-texto-descricao)]">Carregando notícias</p>
+        <p className="text-[var(--color-resumo-noticia)]">Carregando notícias</p>
       </main>
     );
   }
@@ -30,7 +28,7 @@ export default function FeedNoticias() {
   if (erro) {
     return (
       <main className="max-w-[1030px] mx-auto px-4 py-8">
-        <p className="text-[var(--cor-texto-descricao)]">Erro ao carregar notícias. </p>
+        <p className="text-[var(--color-resumo-noticia)]">Erro ao carregar notícias. </p>
       </main>
     );
   }
@@ -38,7 +36,7 @@ export default function FeedNoticias() {
   if (noticias.length === 0) {
     return (
       <main className="max-w-[1030px] mx-auto px-4 py-8">
-        <p className="text-[var(--cor-texto-descricao)]">Nenhuma notícia encontrada.</p>
+        <p className="text-[var(--color-resumo-noticia)]">Nenhuma notícia encontrada.</p>
       </main>
     );
   }
