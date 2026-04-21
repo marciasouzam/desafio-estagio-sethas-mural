@@ -11,7 +11,7 @@ export default function CardPequeno({ noticia }) {
     >
       <div className="flex flex-col gap-3">
         <CategoryBadge categoria={noticia.categoria} />
-        <h3 className="text-principal font-sans font-destaque text-base leading-snug line-clamp-3">
+        <h3 className="text-[var(--color-principal)] font-[var(--font-sans)] font-[var(--font-weight-destaque)] text-base leading-snug line-clamp-3">
           {noticia.titulo}
         </h3>
       </div>
@@ -25,9 +25,9 @@ export default function CardPequeno({ noticia }) {
               className="w-8 h-8 rounded-full object-cover"
             />
           )}
-          <span className="text-sm text-[var(--color-base)]">{noticia.autor}</span>
+          <span className="text-sm text-[var(--color-principal)] font-[var(--font-sans)] font-[var(--font-weight-destaque)]">{noticia.autor}</span>
         </div>
-        <span className="text-sm text-[var(--color-apoio)]">{noticia.data_publicacao}</span>
+        <span className="text-sm text-[var(--color-principal)] font-[var(--font-sans)] font-[var(--font-weight-destaque)]">{noticia.data_publicacao}</span>
       </div>
     </div>
   );
