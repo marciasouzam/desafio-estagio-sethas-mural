@@ -1,23 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Saudacao from '../components/Saudacao';
 import CardDestaque from '../components/news/CardDestaque';
 import CardPequeno from '../components/news/CardPequeno';
 
 import { getNoticias } from '../services/noticiasService';
-
-function obterSaudacao() {
-  const hora = new Date().getHours();
-
-  if (hora < 12) {
-    return 'Bom dia';
-  }
-
-  if (hora < 18) {
-    return 'Boa tarde';
-  }
-
-  return 'Boa noite';
-}
 
 export default function FeedNoticias() {
   const location = useLocation();
@@ -43,7 +30,7 @@ export default function FeedNoticias() {
   const cabecalhoHome = (
     <section className="mb-6 flex items-center justify-between gap-4">
       <div className="flex flex-col gap-1">
-        <p className="text-sm leading-textos text-apoio font-sans font-regular">{obterSaudacao()}</p>
+        <Saudacao />
         <h1 className="text-[32px] leading-textos text-principal font-serif font-regular">Mural de Notícias</h1>
       </div>
       <Link
