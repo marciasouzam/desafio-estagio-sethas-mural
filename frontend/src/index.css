@@ -10,6 +10,7 @@
 }
 
 /* Linha fina da notícia - Na página do feed de notícias: font-weight: 500*/
+/* Texto corrido na página da notícia - font-weight: 500*/
 
 @font-face {
   font-family: 'DM Sans';
@@ -60,18 +61,16 @@
   --fonte-titulo-principal: 'DM Serif Text', serif;
   --fonte-resumo-home: 'DM Sans', sans-serif;
   --fonte-resumo-noticia: 'DM Sans', sans-serif;
-  --fonte-texto-corpo: 'DM Serif Text', serif;
+  --fonte-texto-corpo: 'DM Sans', sans-serif; /*preciso baixar? */
   --fonte-mono: 'DM Mono', monospace;
 
   /* Pesos */
-  --weight-titulo-principal: 400; 
-  
-  --weight-resumo-home: 500;      /* DM Sans Medium */
-  --weight-resumo-noticia: 400;   /* DM Sans Regular */
-  --weight-titulo-noticia: 600;   /* DM Sans Semi-Bold */
-  
-  --weight-corpo: 400;            /* DM Serif Regular */
-  --weight-mono: 300;             /* DM Mono Light */
+  --weight-titulo-noticia: 400; 
+  --weight-titulo-noticia-home: 600; 
+  --weight-resumo-home: 400;      
+  --weight-resumo-noticia: 500;   
+  --weight-corpo-noticia: 500;            
+  --weight-mono: 300;             
 }
 
 
