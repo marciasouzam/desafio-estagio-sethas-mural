@@ -78,7 +78,7 @@ export default function CadastroNoticias() {
         <span>Voltar ao feed</span>
       </Link>
 
-      <h1 className="mb-6 text-2xl leading-textos text-principal font-serif font-regular">
+      <h1 className="mb-6 text-2xl leading-none text-principal font-serif-display font-normal">
         Cadastrar uma nova Notícia
       </h1>
 

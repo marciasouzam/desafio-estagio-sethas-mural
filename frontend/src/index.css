@@ -46,6 +46,14 @@
   src: url('./assets/fonts/dm-mono-v14-latin-300.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'DM Serif Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./assets/fonts/dm-serif-display-v15-latin-regular.woff2') format('woff2');
+}
+
 @theme {
   --color-principal: #393939;  /* antigo fonte-home  */
   --color-texto: #313131;       /* antigo fonte-noticia  */
@@ -58,6 +66,7 @@
   --font-serif: 'DM Serif Text', serif; 
   --font-sans: 'DM Sans', sans-serif;    
   --font-mono: 'DM Mono', monospace;
+  --font-serif-display: 'DM Serif Display', serif;
 
   --font-weight-leve: 300;     
   --font-weight-regular: 400;  
