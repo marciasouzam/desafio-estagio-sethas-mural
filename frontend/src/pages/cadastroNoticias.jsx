@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { Link, useNavigate } from 'react-router-dom';
+import arrowRightSquareIcon from '../assets/arrow-right-square_svgrepo.com.svg';
 import { criarNoticia } from '../services/noticiasService';
 import FormField from '../components/form/FormField';
 
@@ -71,9 +72,10 @@ export default function CadastroNoticias() {
 
       <Link
         to="/"
-        className="flex items-center gap-1.5 text-sm text-apoio hover:text-texto mb-6 w-fit cursor-pointer transition-colors"
+        className="flex items-center gap-1.5 text-base text-principal font-sans font-medio leading-textos mb-6 w-fit cursor-pointer transition-colors"
       >
-        ← Voltar ao feed
+        <img src={arrowRightSquareIcon} alt="" className="h-5 w-5 shrink-0" />
+        <span>Voltar ao feed</span>
       </Link>
 
       <h1 className="mb-6 text-2xl leading-textos text-principal font-serif font-regular">
