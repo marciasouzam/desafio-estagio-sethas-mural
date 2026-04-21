@@ -1,6 +1,6 @@
 export default function CategoryBadge({ categoria }) {
   return (
-    <span className="inline-block bg-[var(--color-enfase)] text-[var(--color-principal)] text-xs font-[var(--font-weight-destaque)] font-[var(--font-sans)] uppercase px-3 py-1 rounded-full w-fit">
+    <span className="inline-flex w-fit [--leading-titulo:1.3] rounded-full bg-enfase px-2.5 py-1 text-[10px] leading-none uppercase text-principal font-sans font-destaque">
       {categoria}
     </span>
   );

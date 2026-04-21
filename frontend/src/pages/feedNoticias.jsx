@@ -20,7 +20,7 @@ export default function FeedNoticias() {
   if (carregando) {
     return (
       <main className="max-w-[1030px] mx-auto px-4 py-8">
-        <p className="text-[var(--color-apoio)]">Carregando notícias</p>
+        <p className="text-apoio">Carregando notícias</p>
       </main>
     );
   }
@@ -28,7 +28,7 @@ export default function FeedNoticias() {
   if (erro) {
     return (
       <main className="max-w-[1030px] mx-auto px-4 py-8">
-        <p className="text-[var(--color-apoio)]">Erro ao carregar notícias. </p>
+        <p className="text-apoio">Erro ao carregar notícias. </p>
       </main>
     );
   }
@@ -36,7 +36,7 @@ export default function FeedNoticias() {
   if (noticias.length === 0) {
     return (
       <main className="max-w-[1030px] mx-auto px-4 py-8">
-        <p className="text-[var(--color-apoio)]">Nenhuma notícia encontrada.</p>
+        <p className="text-apoio">Nenhuma notícia encontrada.</p>
       </main>
     );
   }

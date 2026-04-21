@@ -1,36 +1,50 @@
+import { Link } from 'react-router-dom';
+import { formatarData } from '../../utils/formatarData';
+
 export default function CardDestaque({ noticia }) {
   return (
-    <div className="w-full flex flex-row gap-6 bg-[var(--color-superficie)] border border-[var(--color-divisor)] rounded-xl p-[9px_24px_9px_9px] h-[243px]">
-      <img
-        src={noticia.imagem_capa}
-        alt={noticia.titulo}
-        className="h-full w-[304px] shrink-0 rounded-lg object-cover"
-      />
+    <article className="w-full h-[243px] overflow-hidden rounded-xl border border-divisor bg-superficie">
+      <Link
+        to={`/noticias/${noticia.id}`}
+        className="flex h-full gap-4 p-2 text-left transition-shadow hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-enfase focus-visible:ring-offset-2"
+      >
+        <img
+          src={noticia.imagem_capa}
+          alt={noticia.titulo}
+          className="h-full w-[304px] shrink-0 rounded-lg object-cover"
+        />
 
-      <div className="flex flex-col justify-between flex-1 py-1">
-        <div className="flex flex-col gap-2">
-          <h2 className="text-[var(--color-principal)] font-semibold text-xl leading-snug">
-            {noticia.titulo}
-          </h2>
-          <p className="text-[var(--color-apoio)] text-sm leading-relaxed line-clamp-3">
-            {noticia.resumo}
-          </p>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <img
-              src={noticia.foto_autor}
-              alt={noticia.autor}
-              className="w-8 h-8 rounded-full object-cover"
-            />
-            <span className="text-sm text-[var(--color-base)]">{noticia.autor}</span>
+        <div className="flex min-w-0 flex-1 flex-col px-2 py-3">
+          <div className="flex flex-col gap-2">
+            <h2 className="line-clamp-2 text-[2rem] leading-[1.15] text-principal font-serif font-regular">
+              {noticia.titulo}
+            </h2>
+            <p className="line-clamp-3 text-sm leading-[1.35] text-apoio font-sans font-regular">
+              {noticia.resumo}
+            </p>
           </div>
-          <span className="text-sm text-[var(--color-apoio)]">
-            {noticia.data_publicacao}
-          </span>
+
+          <footer className="mt-auto flex items-center justify-between gap-4 pt-6">
+            <div className="flex min-w-0 items-center gap-2">
+              <div className="size-8 shrink-0 overflow-hidden rounded-full border border-divisor bg-fundo">
+                {noticia.foto_autor && (
+                  <img
+                    src={noticia.foto_autor}
+                    alt={`Foto de perfil de ${noticia.autor}`}
+                    className="h-full w-full object-cover"
+                  />
+                )}
+              </div>
+              <span className="min-w-0 truncate text-xs leading-none text-principal font-sans font-destaque">
+                {noticia.autor}
+              </span>
+            </div>
+            <time className="shrink-0 text-xs leading-none text-principal font-sans font-destaque">
+              {formatarData(noticia.data_publicacao)}
+            </time>
+          </footer>
         </div>
-      </div>
-    </div>
-  )
+      </Link>
+    </article>
+  );
 }

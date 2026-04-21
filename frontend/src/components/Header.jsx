@@ -3,7 +3,7 @@ import fotoUsuarioImg from '../assets/fotoUsuario.png'
 
 export default function Header() {
   return (
-    <header className="w-full h-20 bg-white border-b border-[var(--color-divisor)] flex items-center justify-center">
+    <header className="w-full h-20 bg-white border-b border-divisor flex items-center justify-center">
       <div className="w-full max-w-[1440px] px-[207px] flex items-center justify-between">
         <div className="flex items-center">
           <img
@@ -13,7 +13,7 @@ export default function Header() {
           />
         </div>
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full overflow-hidden border border-[var(--color-divisor)]">
+          <div className="w-10 h-10 rounded-full overflow-hidden border border-divisor">
             <img
               src={fotoUsuarioImg}
               alt="Foto de perfil"
@@ -21,10 +21,10 @@ export default function Header() {
             />
           </div>
           <div className="flex flex-col leading-tight">
-            <span className="text-[14px] font-semibold text-[var(--color-principal)] truncate">
+            <span className="text-[14px] font-semibold text-principal truncate">
               Danilo
             </span>
-            <span className="text-[14px] font-semibold text-[var(--color-principal)] truncate">
+            <span className="text-[14px] font-semibold text-principal truncate">
               Ladeira
             </span>
           </div>
