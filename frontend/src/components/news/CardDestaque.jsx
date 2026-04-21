@@ -6,7 +6,7 @@ export default function CardDestaque({ noticia }) {
     <article className="w-full h-[243px] overflow-hidden rounded-xl border border-divisor bg-superficie">
       <Link
         to={`/noticias/${noticia.id}`}
-        className="flex h-full gap-6 p-2 text-left transition-shadow hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-enfase focus-visible:ring-offset-2"
+        className="flex h-full gap-6 p-2 text-left cursor-pointer transition-shadow hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-enfase focus-visible:ring-offset-2"
       >
         <img
           src={noticia.imagem_capa}

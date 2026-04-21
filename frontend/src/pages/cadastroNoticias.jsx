@@ -15,8 +15,14 @@ const schema = z.object({
     'Selecione uma categoria'
   ),
   autor:      z.string().min(1, 'Autor é obrigatório').max(30, 'Máximo 30 caracteres'),
-  foto_autor: z.any().optional(),
-  imagem_capa: z.any().refine((files) => files?.length > 0, 'Imagem da capa é obrigatória'),
+  foto_autor: z
+    .any()
+    .optional()
+    .refine((files) => !files?.length || files[0]?.type?.startsWith('image/'), 'Foto do autor deve ser uma imagem'),
+  imagem_capa: z
+    .any()
+    .refine((files) => files?.length > 0, 'Imagem da capa é obrigatória')
+    .refine((files) => files?.[0]?.type?.startsWith('image/'), 'Imagem da capa deve ser uma imagem'),
 });
 
 const inputClass =
@@ -52,7 +58,7 @@ export default function CadastroNoticias() {
         formData.append('foto_autor', data.foto_autor[0]);
       }
       await criarNoticia(formData);
-      navigate('/');
+      navigate('/', { state: { refresh: Date.now() } });
     } catch {
       setErroEnvio(true);
     } finally {
@@ -65,12 +71,12 @@ export default function CadastroNoticias() {
 
       <Link
         to="/"
-        className="flex items-center gap-1.5 text-sm text-apoio hover:text-texto mb-6 w-fit transition-colors"
+        className="flex items-center gap-1.5 text-sm text-apoio hover:text-texto mb-6 w-fit cursor-pointer transition-colors"
       >
         ← Voltar ao feed
       </Link>
 
-      <h1 className="text-2xl font-semibold text-principal mb-6">
+      <h1 className="mb-6 text-2xl leading-textos text-principal font-serif font-regular">
         Cadastrar uma nova Notícia
       </h1>
 

@@ -7,7 +7,7 @@ export default function CardPequeno({ noticia }) {
     <article className="w-[326px] h-[243px] rounded-xl border border-divisor bg-superficie">
       <Link
         to={`/noticias/${noticia.id}`}
-        className="flex h-full flex-col p-6 text-left transition-shadow hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-enfase focus-visible:ring-offset-2"
+        className="flex h-full flex-col p-6 text-left cursor-pointer transition-shadow hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-enfase focus-visible:ring-offset-2"
       >
         <div className="flex flex-col gap-4">
         <EtiquetaCategoria categoria={noticia.categoria} />

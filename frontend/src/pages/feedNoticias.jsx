@@ -1,25 +1,64 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import CardDestaque from '../components/news/CardDestaque';
 import CardPequeno from '../components/news/CardPequeno';
 
 import { getNoticias } from '../services/noticiasService';
 
+function obterSaudacao() {
+  const hora = new Date().getHours();
+
+  if (hora < 12) {
+    return 'Bom dia';
+  }
+
+  if (hora < 18) {
+    return 'Boa tarde';
+  }
+
+  return 'Boa noite';
+}
 
 export default function FeedNoticias() {
+  const location = useLocation();
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState(false);
-    const [noticias, setNoticias] = useState([]);
+  const [noticias, setNoticias] = useState([]);
+  const classeMain = 'mx-auto w-full max-w-[1440px] px-4 py-8 md:px-[205px]';
 
-  useEffect(() => {
+  const carregarNoticias = () => {
+    setCarregando(true);
+    setErro(false);
+
     getNoticias()
       .then((res) => setNoticias(res.data))
       .catch(() => setErro(true))
       .finally(() => setCarregando(false));
-  }, []);
+  };
+
+  useEffect(() => {
+    carregarNoticias();
+  }, [location.state?.refresh]);
+
+  const cabecalhoHome = (
+    <section className="mb-6 flex items-center justify-between gap-4">
+      <div className="flex flex-col gap-1">
+        <p className="text-sm leading-textos text-apoio font-sans font-regular">{obterSaudacao()}</p>
+        <h1 className="text-[32px] leading-textos text-principal font-serif font-regular">Mural de Notícias</h1>
+      </div>
+      <Link
+        to="/cadastro"
+        className="rounded-md bg-enfase px-3 py-[7.5px] text-base leading-textos text-principal font-sans font-destaque cursor-pointer transition-opacity hover:opacity-90"
+      >
+        Cadastrar Notícia
+      </Link>
+    </section>
+  );
 
   if (carregando) {
     return (
-      <main className="max-w-[1030px] mx-auto px-4 py-8">
+      <main className={classeMain}>
+        {cabecalhoHome}
         <p className="text-apoio">Carregando notícias</p>
       </main>
     );
@@ -27,7 +66,8 @@ export default function FeedNoticias() {
 
   if (erro) {
     return (
-      <main className="max-w-[1030px] mx-auto px-4 py-8">
+      <main className={classeMain}>
+        {cabecalhoHome}
         <p className="text-apoio">Erro ao carregar notícias. </p>
       </main>
     );
@@ -35,7 +75,8 @@ export default function FeedNoticias() {
 
   if (noticias.length === 0) {
     return (
-      <main className="max-w-[1030px] mx-auto px-4 py-8">
+      <main className={classeMain}>
+        {cabecalhoHome}
         <p className="text-apoio">Nenhuma notícia encontrada.</p>
       </main>
     );
@@ -44,11 +85,12 @@ export default function FeedNoticias() {
   const [destaque, ...restantes] = noticias;
 
   return (
-    <main className="max-w-[1030px] mx-auto px-4 py-8">
+    <main className={classeMain}>
+      {cabecalhoHome}
       <CardDestaque noticia={destaque} />
 
       {restantes.length > 0 && (
-        <div className="grid grid-cols-3 gap-6 mt-6">
+        <div className="mt-6 grid grid-cols-3 gap-[26px]">
           {restantes.map((noticia) => (
             <CardPequeno key={noticia.id} noticia={noticia} />
           ))}
