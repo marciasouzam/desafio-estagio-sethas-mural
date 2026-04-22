@@ -6,6 +6,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import arrowRightSquareIcon from '../assets/arrow-right-square_svgrepo.com.svg';
 import { criarNoticia } from '../services/noticiasService';
 import FormField from '../components/form/FormField';
+import BannerNewsletter from '../components/BannerNewsletter'
+
 
 const schema = z.object({
   titulo:     z.string().min(1, 'Título é obrigatório').max(150, 'Máximo 150 caracteres'),

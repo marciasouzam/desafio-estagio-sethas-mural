@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import CadastrarNoticiaButton from '../components/CadastrarNoticiaButton';
 import Saudacao from '../components/Saudacao';
+import BannerNewsletter from '../components/BannerNewsletter';
 import CardDestaque from '../components/news/CardDestaque';
 import CardPequeno from '../components/news/CardPequeno';
 
@@ -40,45 +41,57 @@ export default function FeedNoticias() {
 
   if (carregando) {
     return (
-      <main className={classeMain}>
-        {cabecalhoHome}
-        <p className="text-apoio">Carregando notícias</p>
-      </main>
+      <>
+        <main className={classeMain}>
+          {cabecalhoHome}
+          <p className="text-apoio">Carregando notícias</p>
+        </main>
+        <BannerNewsletter />
+      </>
     );
   }
 
   if (erro) {
     return (
-      <main className={classeMain}>
-        {cabecalhoHome}
-        <p className="text-apoio">Erro ao carregar notícias. </p>
-      </main>
+      <>
+        <main className={classeMain}>
+          {cabecalhoHome}
+          <p className="text-apoio">Erro ao carregar notícias. </p>
+        </main>
+        <BannerNewsletter />
+      </>
     );
   }
 
   if (noticias.length === 0) {
     return (
-      <main className={classeMain}>
-        {cabecalhoHome}
-        <p className="text-apoio">Nenhuma notícia encontrada.</p>
-      </main>
+      <>
+        <main className={classeMain}>
+          {cabecalhoHome}
+          <p className="text-apoio">Nenhuma notícia encontrada.</p>
+        </main>
+        <BannerNewsletter />
+      </>
     );
   }
 
   const [destaque, ...restantes] = noticias;
 
   return (
-    <main className={classeMain}>
-      {cabecalhoHome}
-      <CardDestaque noticia={destaque} />
+    <>
+      <main className={classeMain}>
+        {cabecalhoHome}
+        <CardDestaque noticia={destaque} />
 
-      {restantes.length > 0 && (
-        <div className="mt-6 grid grid-cols-3 gap-[26px]">
-          {restantes.map((noticia) => (
-            <CardPequeno key={noticia.id} noticia={noticia} />
-          ))}
-        </div>
-      )}
-    </main>
+        {restantes.length > 0 && (
+          <div className="mt-6 grid grid-cols-3 gap-[26px]">
+            {restantes.map((noticia) => (
+              <CardPequeno key={noticia.id} noticia={noticia} />
+            ))}
+          </div>
+        )}
+      </main>
+      <BannerNewsletter />
+    </>
   );
 }
