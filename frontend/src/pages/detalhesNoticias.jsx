@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import vectorIcon from '../assets/vector.svg';
-import BannerNewsletter from '../components/BannerNewsletter';
 import NomeAutor from '../components/news/NomeAutor';
 import { deletarNoticia, getNoticia } from '../services/noticiasService';
+import styles from './detalhesNoticias.module.css';
 import { formatarData } from '../utils/formatarData';
 
 export default function DetalhesNoticias() {
@@ -44,43 +44,33 @@ export default function DetalhesNoticias() {
 
   if (carregando) {
     return (
-      <>
-        <main className="max-w-[1030px] mx-auto px-4 py-8">
-          <p className="text-apoio">Carregando notícia...</p>
-        </main>
-        <BannerNewsletter />
-      </>
+      <main className="max-w-[1030px] mx-auto px-4 py-8">
+        <p className="text-apoio">Carregando notícia...</p>
+      </main>
     );
   }
 
   if (erro && !noticia) {
     return (
-      <>
-        <main className="max-w-[1030px] mx-auto px-4 py-8">
-          <p className="text-apoio">{erro}</p>
-        </main>
-        <BannerNewsletter />
-      </>
+      <main className="max-w-[1030px] mx-auto px-4 py-8">
+        <p className="text-apoio">{erro}</p>
+      </main>
     );
   }
 
   if (!noticia) {
     return (
-      <>
-        <main className="max-w-[1030px] mx-auto px-4 py-8">
-          <p className="text-apoio">Notícia não encontrada.</p>
-        </main>
-        <BannerNewsletter />
-      </>
+      <main className="max-w-[1030px] mx-auto px-4 py-8">
+        <p className="text-apoio">Notícia não encontrada.</p>
+      </main>
     );
   }
 
   return (
-    <>
       <main className="mx-auto w-full max-w-[1440px] px-4 py-8 md:px-[205px]">
-        <article className="overflow-hidden rounded-xl border border-divisor bg-superficie px-8 py-8">
+        <article className="overflow-hidden rounded-xl px-8 py-8">
           <div className="flex items-center justify-center gap-3 mb-5">
-            <span className="inline-flex rounded-full bg-enfase px-2.5 py-1 text-[10px] leading-none uppercase text-principal font-sans font-destaque">
+            <span className="inline-flex rounded-full bg-enfase px-2.5 py-1 text-base leading-textos uppercase text-texto font-sans font-destaque">
               {noticia.categoria}
             </span>
             <time className="text-xs leading-textos text-apoio font-sans font-regular">
@@ -99,7 +89,7 @@ export default function DetalhesNoticias() {
           <img
             src={noticia.imagem_capa}
             alt={noticia.titulo}
-            className="w-full object-cover rounded-lg mb-4"
+            className="w-full object-cover rounded-lg mb-[47px] max-h-[440px]"
           />
 
           <div className="flex items-center justify-between border-y border-divisor py-3 mb-6">
@@ -134,14 +124,12 @@ export default function DetalhesNoticias() {
             </button>
           </div>
 
-          <p className="whitespace-pre-line text-sm leading-textos text-texto font-sans font-regular">
+          <p className={`${styles.conteudoNoticia} whitespace-pre-line text-xl leading-textos text-texto font-sans font-regular`}>
             {noticia.conteudo}
           </p>
         </article>
 
         {erro && <p className="mt-4 text-sm text-red-500">{erro}</p>}
       </main>
-      <BannerNewsletter />
-    </>
   );
 }
