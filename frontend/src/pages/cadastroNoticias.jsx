@@ -68,7 +68,7 @@ export default function CadastroNoticias() {
   };
 
   return (
-    <main className="max-w-[1030px] mx-auto px-4 py-8">
+    <main className="mx-auto w-full max-w-[1440px] px-4 py-8 md:px-[205px]">
 
       <Link
         to="/"

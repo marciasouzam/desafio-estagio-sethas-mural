@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="w-full h-20 bg-white border-b border-divisor flex items-center justify-center">
       <div className="w-full max-w-[1440px] px-[207px] flex items-center justify-between">
-        <Link to="/" className="flex items-center cursor-pointer"> {/* extra? */}
+        <Link to="/" className="flex items-center cursor-pointer">
           <img
             src={logoImg}
             alt="Logo Corp News"
