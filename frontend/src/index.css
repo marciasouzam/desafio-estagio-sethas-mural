@@ -6,7 +6,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('./assets/fonts/dm-serif-text-v15-latin-regular.woff2') format('woff2');
+  src: url('./assets/fonts/dm-serif-text-v13-latin-regular.woff2') format('woff2');
 }
 
 /* Linha fina da notícia - Na página do feed de notícias: font-weight: 500*/
@@ -16,7 +16,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('./assets/fonts/dm-sans-v15-latin-500.woff2') format('woff2');
+  src: url('./assets/fonts/dm-sans-v17-latin-500.woff2') format('woff2');
 }
 
 /* Linha fina da notícia - Na página da notícia: font-weight: 400*/
@@ -25,7 +25,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('./assets/fonts/dm-sans-v15-latin-400.woff2') format('woff2');
+  src: url('./assets/fonts/dm-sans-v17-latin-regular.woff2') format('woff2');
 }
 
 /* Títulos das notícias - semi-bold */
@@ -34,7 +34,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('./assets/fonts/dm-sans-v15-latin-600.woff2') format('woff2');
+  src: url('./assets/fonts/dm-sans-v17-latin-600.woff2') format('woff2');
 }
 
 /* Textos */
@@ -43,7 +43,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('./assets/fonts/dm-mono-v14-latin-300.woff2') format('woff2');
+  src: url('./assets/fonts/dm-mono-v16-latin-300.woff2') format('woff2');
 }
 
 @font-face {
@@ -51,7 +51,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('./assets/fonts/dm-serif-display-v15-latin-regular.woff2') format('woff2');
+  src: url('./assets/fonts/dm-serif-display-v17-latin-regular.woff2') format('woff2');
 }
 
 @theme {
