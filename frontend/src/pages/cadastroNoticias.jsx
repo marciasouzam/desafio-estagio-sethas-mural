@@ -6,7 +6,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import arrowRightSquareIcon from '../assets/arrow-right-square_svgrepo.com.svg';
 import { criarNoticia } from '../services/noticiasService';
 import FormField from '../components/form/FormField';
-import BannerNewsletter from '../components/BannerNewsletter'
+import BannerNewsletter from '../components/BannerNewsletter';
+import arquivoMenor from '../assets/arquivoMenor.svg';
+import arquivoMaior from '../assets/arquivoMaior.svg';
 
 
 const schema = z.object({
@@ -29,7 +31,9 @@ const schema = z.object({
 });
 
 const inputClass =
-  'w-full border border-divisor rounded-lg px-3 py-2 text-sm text-texto placeholder:text-apoio bg-white focus:outline-none focus:ring-1 focus:ring-enfase';
+  'w-full border border-divisor rounded-lg px-3 py-2 text-sm text-texto placeholder:text-formulario bg-white focus:outline-none';
+const selectClass =
+  'w-full border border-divisor rounded-lg px-3 py-2 text-sm text-formulario bg-white focus:outline-none cursor-pointer';
 
 export default function CadastroNoticias() {
   const navigate = useNavigate();
@@ -70,17 +74,18 @@ export default function CadastroNoticias() {
   };
 
   return (
+    <>
     <main className="mx-auto w-full max-w-[1440px] px-4 py-8 md:px-[205px]">
 
       <Link
         to="/"
-        className="flex items-center gap-1.5 text-base text-principal font-sans font-medio leading-textos mb-6 w-fit cursor-pointer transition-colors"
+        className="flex items-center gap-2.5 text-base text-principal font-sans font-medio leading-textos mb-9 w-fit cursor-pointer transition-colors"
       >
         <img src={arrowRightSquareIcon} alt="" className="h-5 w-5 shrink-0" />
         <span>Voltar ao feed</span>
       </Link>
 
-      <h1 className="mb-6 text-2xl leading-none text-principal font-serif-display font-normal">
+      <h1 className="mb-9 text-2xl leading-none text-principal font-serif-display font-normal">
         Cadastrar uma nova Notícia
       </h1>
 
@@ -118,7 +123,11 @@ export default function CadastroNoticias() {
 
         <div className="grid grid-cols-3 gap-4">
           <FormField htmlFor="categoria" label="Categoria" error={errors.categoria?.message}>
-            <select id="categoria" {...register('categoria')} className={`${inputClass} cursor-pointer`}>
+            <select
+              id="categoria"
+              {...register('categoria')}
+              className={selectClass}
+            >
               <option value="">Selecione a Categoria</option>
               <option value="RH">RH</option>
               <option value="TI">TI</option>
@@ -141,12 +150,8 @@ export default function CadastroNoticias() {
               htmlFor="foto_autor"
               className={`${inputClass} flex items-center gap-2 cursor-pointer`}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-apoio shrink-0">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="17 8 12 3 7 8" />
-                <line x1="12" y1="3" x2="12" y2="15" />
-              </svg>
-              <span className="text-apoio text-sm truncate">
+              <img src={arquivoMenor} alt="" className="w-[15.12px] h-[17.88px] shrink-0" />
+              <span className="text-texto text-sm truncate">
                 {fotoAutorSelecionada?.[0]?.name ?? 'Procurar Arquivo'}
               </span>
             </label>
@@ -157,13 +162,9 @@ export default function CadastroNoticias() {
         <FormField error={errors.imagem_capa?.message}>
           <label
             htmlFor="imagem_capa"
-            className="flex flex-col items-center justify-center gap-2 border border-dashed border-divisor rounded-xl py-6 cursor-pointer hover:bg-gray-50 transition-colors"
+            className="flex flex-col items-center justify-center gap-2 border border-dashed border-divisor rounded-xl py-6 cursor-pointer"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-apoio">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="17 8 12 3 7 8" />
-              <line x1="12" y1="3" x2="12" y2="15" />
-            </svg>
+            <img src={arquivoMaior} alt="" className="w-6 h-6" />
             <p className="text-sm text-apoio">
               {imagemCapaSelecionada?.[0]?.name
                 ? <span className="text-texto font-medium">{imagemCapaSelecionada[0].name}</span>
@@ -182,7 +183,7 @@ export default function CadastroNoticias() {
           <button
             type="submit"
             disabled={enviando}
-            className="bg-enfase text-texto font-semibold text-sm px-6 py-2.5 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+            className="bg-enfase text-texto font-semibold text-base px-3 py-[7.5px] rounded-lg disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
           >
             {enviando ? 'Cadastrando...' : 'Cadastrar notícia'}
           </button>
@@ -190,5 +191,7 @@ export default function CadastroNoticias() {
       </form>
 
     </main>
+    <BannerNewsletter />
+  </>
   );
 }

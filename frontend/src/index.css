@@ -62,6 +62,7 @@
   --color-superficie: #ffffff; /* antigo fundo de componentes  */
   --color-divisor: #e6e6e6;    /* antigo borda  */
   --color-enfase: #80e67c;     /* Cor de destaque/marca */
+  --color-formulario: #D9D9D9;
 
   --font-serif: 'DM Serif Text', serif; 
   --font-sans: 'DM Sans', sans-serif;    
