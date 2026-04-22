@@ -73,16 +73,16 @@ export default function DetalhesNoticias() {
             <span className="inline-flex rounded-full bg-enfase px-2.5 py-1 text-base leading-textos uppercase text-texto font-sans font-destaque">
               {noticia.categoria}
             </span>
-            <time className="text-xs leading-textos text-apoio font-sans font-regular">
+            <time className="text-xl leading-textos text-texto font-sans font-destaque">
               {formatarData(noticia.data_publicacao)}
             </time>
           </div>
 
-          <h1 className="text-[32px] leading-textos text-principal font-serif font-regular text-center mb-3">
+          <h1 className="text-5xl leading-textos text-principal font-serif font-regular text-center mb-10">
             {noticia.titulo}
           </h1>
 
-          <p className="text-xl leading-textos text-apoio font-sans font-regular text-center mb-6">
+          <p className="text-xl leading-textos text-apoio font-sans font-regular text-center mb-[47px]">
             {noticia.resumo}
           </p>
 

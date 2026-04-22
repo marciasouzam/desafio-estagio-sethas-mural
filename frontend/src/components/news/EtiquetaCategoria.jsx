@@ -5,3 +5,5 @@ export default function CategoryBadge({ categoria }) {
     </span>
   );
 }
+
+<span className="inline-flex rounded-full bg-enfase px-2.5 py-1 text-base leading-textos uppercase text-texto font-sans font-destaque"></span>

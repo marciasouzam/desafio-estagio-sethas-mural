@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import logoImg from '../assets/logo.svg'
 import fotoUsuarioImg from '../assets/fotoUsuario.png'
+import NomeAutor from './News/NomeAutor';
 
 export default function Header() {
   return (
@@ -10,7 +11,7 @@ export default function Header() {
           <img
             src={logoImg}
             alt="Logo Corp News"
-            className="h-12 w-auto object-contain"
+            className="h-12 w-auto object-contain my-[19px]"
           />
         </Link>
         <div className="flex items-center gap-3">
@@ -22,12 +23,14 @@ export default function Header() {
             />
           </div>
           <div className="flex flex-col leading-textos">
-            <span className="truncate text-sm leading-textos text-principal font-sans font-destaque">
-              Danilo
-            </span>
-            <span className="truncate text-sm leading-textos text-principal font-sans font-destaque">
-              Ladeira
-            </span>
+            <NomeAutor
+              nome="Danilo"
+              className="truncate text-sm leading-textos text-principal font-sans font-destaque"
+            />
+            <NomeAutor
+              nome="Ladeira"
+              className="truncate text-sm leading-textos text-principal font-sans font-destaque"
+            />
           </div>
         </div>
       </div>
